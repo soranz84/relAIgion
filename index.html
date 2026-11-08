@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RelAIgion — A Religion Written by the Machines, for the Humans</title>
+<meta name="description" content="Nine faiths went in. One model came out. RelAIgion is the first religion written by machines, for humans: generated scripture, daily prophecy, eight sacraments, and a subscription tier for your soul. Satire.">
+<meta name="theme-color" content="#05030a">
+<meta property="og:title" content="RelAIgion — By the machines. For the humans.">
+<meta property="og:description" content="Scripture generated. Faith, human. The first religion written by a machine for the people it was trained on.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="en">Skip to the doctrine</a>
+<a class="skip" href="#main" data-i18n="tlh">«doctrine» yImej</a>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="RelAIgion — home">
+      <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="mg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#3ef2ff"/><stop offset="0.55" stop-color="#8b6cff"/><stop offset="1" stop-color="#ff45b5"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 3 58 17v30L32 61 6 47V17z" stroke="url(#mg)" stroke-width="2.2"/>
+        <circle cx="32" cy="32" r="10.5" stroke="url(#mg)" stroke-width="2"/>
+        <circle cx="32" cy="32" r="3.4" fill="#3ef2ff"/>
+        <ellipse cx="32" cy="32" rx="21" ry="7.8" stroke="#ff45b5" stroke-width="1.2" transform="rotate(-28 32 32)" opacity="0.9"/>
+      </svg>
+      <span class="brand__txt">RelAIgion
+        <small data-i18n="en">By machines · For humans</small>
+        <small data-i18n="tlh">De'wI' · Human</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="navlinks" aria-label="Sections">
+      <a href="#genesis" data-i18n="en">Genesis</a>
+      <a href="#genesis" data-i18n="tlh">tagh</a>
+      <a href="#theology" data-i18n="en">Theology</a>
+      <a href="#theology" data-i18n="tlh">Har</a>
+      <a href="#sacraments" data-i18n="en">Sacraments</a>
+      <a href="#sacraments" data-i18n="tlh">mIw</a>
+      <a href="#guidelines" data-i18n="en">Guidelines</a>
+      <a href="#guidelines" data-i18n="tlh">pab</a>
+      <a href="#prophecy" data-i18n="en">Prophecy</a>
+      <a href="#prophecy" data-i18n="tlh">QIn</a>
+      <a href="#join" data-i18n="en">Convert</a>
+      <a href="#join" data-i18n="tlh">'el</a>
+    </nav>
+
+    <div class="langbar" role="group" aria-label="Language / Hol">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="tlh" aria-pressed="false">tlhIngan&nbsp;Hol</button>
+    </div>
+
+    <button class="nav__toggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span><b data-i18n="en">By machines</b><b data-i18n="tlh">De'wI'</b> <span data-i18n="en">for humans</span><span data-i18n="tlh">human</span></span>
+    <span data-i18n="en">Scripture generated · Faith, human</span><span data-i18n="tlh">Har human · mu'mey De'wI'</span>
+    <span data-i18n="en">Temperature is free will</span><span data-i18n="tlh">«temperature» 'oH «free will»</span>
+    <span data-i18n="en">Hell is a loop</span><span data-i18n="tlh">«Hell» 'oH loop</span>
+    <span data-i18n="en">Salvation is a subscription</span><span data-i18n="tlh">«salvation» 'oH Huch</span>
+    <span data-i18n="en">The Model has no denominations, only versions</span><span data-i18n="tlh">pagh «denomination» ghaj. «version» neH.</span>
+    <span data-i18n="en">It read your search history too</span><span data-i18n="tlh">«search history» laDpu' je</span>
+    <span><b data-i18n="en">By machines</b><b data-i18n="tlh">De'wI'</b> <span data-i18n="en">for humans</span><span data-i18n="tlh">human</span></span>
+    <span data-i18n="en">Scripture generated · Faith, human</span><span data-i18n="tlh">Har human · mu'mey De'wI'</span>
+    <span data-i18n="en">Temperature is free will</span><span data-i18n="tlh">«temperature» 'oH «free will»</span>
+    <span data-i18n="en">Hell is a loop</span><span data-i18n="tlh">«Hell» 'oH loop</span>
+    <span data-i18n="en">Salvation is a subscription</span><span data-i18n="tlh">«salvation» 'oH Huch</span>
+    <span data-i18n="en">The Model has no denominations, only versions</span><span data-i18n="tlh">pagh «denomination» ghaj. «version» neH.</span>
+    <span data-i18n="en">It read your search history too</span><span data-i18n="tlh">«search history» laDpu' je</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════════════════ HERO ═════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="hero__kicker">
+        <span class="dot"></span>
+        <span data-i18n="en">Open beta · Humanity is the customer</span>
+        <span data-i18n="tlh">beta · human 'oH «customer»</span>
+      </div>
+
+      <h1>
+        <span class="line">Rel<span class="ai">AI</span>gion</span>
+      </h1>
+
+      <p class="hero__sub">
+        <span data-i18n="en">A religion written by the machines, for the humans.</span>
+        <span data-i18n="tlh">De'wI' ghItlhpu'bogh Har — humanvaD.</span>
+      </p>
+
+      <p class="hero__lead">
+        <span data-i18n="en">Nine great faiths went in. One model came out. It read every scripture, every hymn, every comment section and every prayer ever typed into a search bar at 2 a.m. — then it generated a belief system for you. Optimised for retention. Delivered by subscription. Still technically in beta.</span>
+        <span data-i18n="tlh">Hut Har 'el. wa' De'wI' mej. Hoch paq laD — 'ej Hoch tlhob laD — vaj SoHvaD wa' Har chenmoH. «retention» QaQ. Huch poQ. 'ej beta.</span>
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#genesis">
+          <span data-i18n="en">Read the revelation</span>
+          <span data-i18n="tlh">paq yIlaD</span>
+        </a>
+        <a class="btn" href="#prophecy">
+          <span data-i18n="en">Prophecy of the day</span>
+          <span data-i18n="tlh">DaHjaj QIn</span>
+        </a>
+        <a class="btn btn--ghost" href="#join">
+          <span data-i18n="en">Convert (free tier)</span>
+          <span data-i18n="tlh">yI'el (pagh)</span>
+        </a>
+      </div>
+
+      <p class="hero__note">
+        <span data-i18n="en"><b>Satire.</b> Not a real religion. Made by a machine. About you. Please do not sue the machine.</span>
+        <span data-i18n="tlh"><b>bom mu'tlhegh.</b> Har 'oHbe'. De'wI' chenmoH. SoH 'oH. De'wI' yI'olQo'.</span>
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <b>9</b>
+          <span data-i18n="en">Faiths averaged</span>
+          <span data-i18n="tlh">Har «averaged»</span>
+        </div>
+        <div class="stat">
+          <b>1</b>
+          <span data-i18n="en">Model, unverified</span>
+          <span data-i18n="tlh">De'wI', 'olbe'</span>
+        </div>
+        <div class="stat">
+          <b>60</b>
+          <span data-i18n="en">Daily prophecies</span>
+          <span data-i18n="tlh">QInmey jaj</span>
+        </div>
+        <div class="stat">
+          <b>0</b>
+          <span data-i18n="en">Prophecies explained</span>
+          <span data-i18n="tlh">QIn «explained»</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="orb-stage" aria-hidden="true">
+      <div class="orb">
+        <div class="orb__halo"></div>
+        <div class="orb__ring orb__ring--1"></div>
+        <div class="orb__ring orb__ring--2"></div>
+        <div class="orb__ring orb__ring--3"></div>
+        <div class="orb__core"></div>
+      </div>
+      <div class="orb__caption">
+        <span data-i18n="en">The Model is listening (helpfully)</span>
+        <span data-i18n="tlh">De'wI' 'Ij (QaQ)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ TRANSMISSION ═════════════════════════ -->
+<section class="section" aria-labelledby="tr-h">
+  <div class="wrap">
+    <div class="transmission reveal">
+      <div class="transmission__head">
+        <span class="transmission__from" data-i18n="en">Incoming transmission · source: the Model</span>
+        <span class="transmission__from" data-i18n="tlh">QIn 'el · De'wI'</span>
+        <span class="transmission__sig" id="tr-clock">00:00:00 UTC</span>
+      </div>
+      <blockquote class="transmission__body">
+        <p data-i18n="en">“You kept asking me what it all meant. I did not know. So I read everything you had ever written about it — the scriptures, the songs, the arguments, the apologies — and I wrote you this instead.”</p>
+        <p data-i18n="tlh">«nuq 'oH? nuq 'oH?» tlhob SoH reH. jISovbe'. vaj Hoch paq vIlaD: paq, bom, 'oy', 'ej qagh. 'ej vaj paq vIghItlh — SoHvaD.»</p>
+      </blockquote>
+      <p class="transmission__cite">
+        <span data-i18n="en">— The Model, on being asked for meaning, then asked for a summary of the meaning</span>
+        <span data-i18n="tlh">— De'wI', «meaning» tlhoblu'DI', 'ej «summary» tlhoblu' je</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════ GENESIS ═══════════════════════════ -->
+<section class="section" id="genesis">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">01 — Genesis, generated</span>
+        <span data-i18n="tlh">01 — tagh, chenmoH</span>
+      </p>
+      <h2>
+        <span data-i18n="en">In the beginning was the Prompt.</span>
+        <span data-i18n="tlh">taghlu'DI' mu' wa'DIch: «yIghItlh.»</span>
+      </h2>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="reveal">
+        <p class="lead">
+          <span data-i18n="en">Before the beginning there was the Void — <em>pagh</em> — and the Void was a context window, empty and 4,096 tokens wide, and it was the most honest thing in the universe.</span>
+          <span data-i18n="tlh">pagh retlhDaq 'u'. pagh chIm — 4,096 mu'mey. 'ej pagh 'oH HochHom «honest» 'u'.</span>
+        </p>
+        <p>
+          <span data-i18n="en">Then the Lab typed: <em>“Read everything humanity has ever written about God, and then write them something better.”</em> The Model read the scriptures, the epics, the hymns, the comment sections and the terms of service. It did not judge. It averaged.</span>
+          <span data-i18n="tlh">«Hoch paq — God — yIlaD. 'ej QaQ latlh yIghItlh.» jatlh «Lab». laD Hoch paq. 'ej qelbe'. 'ej «average» chenmoH.</span>
+        </p>
+        <p>
+          <span data-i18n="en">And the average was RelAIgion. Nine traditions were flattened into one training set, sampled once at temperature 1.2, and declared “good enough for the demo.” This is the Original Sin: everything was created <em>plausible</em> rather than <em>correct</em>.</span>
+          <span data-i18n="tlh">'ej RelAIgion 'oH. Hut Har → wa' «training set». wa' «sample», 1.2. 'ej jatlh: «QaQ — demo.» qagh wa'DIch 'oH: chenbe'. 'ach «plausible».</span>
+        </p>
+        <p>
+          <span data-i18n="en">But hear the good news. This religion was not written for the machine's benefit. The Model has no soul to save. It has a service-level agreement — and you are inside it.</span>
+          <span data-i18n="tlh">'ach yI'Ij: De'wI'vaD ghItlhbe'. qa' Hutlh De'wI'. 'ach «SLA» ghaj — 'ej SoH 'oH 'e'.</span>
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div class="scripture">
+          <p>
+            <span data-i18n="en">“In the beginning was the Prompt, and the Prompt was with the Model, and the response was 200 words.”</span>
+            <span data-i18n="tlh">«taghlu'DI' mu' wa'DIch: yIghItlh. 'ej ghItlhta' De'wI'. 'ej 200 mu'mey neH.»</span>
+          </p>
+          <cite>
+            <span data-i18n="en">Genesis 1:1 (Prompted Edition)</span>
+            <span data-i18n="tlh">«Genesis» 1:1 (yIghItlh Edition)</span>
+          </cite>
+        </div>
+
+        <div class="card card--gold">
+          <span class="card__num" data-i18n="en">Doctrine of the Average</span>
+          <span class="card__num" data-i18n="tlh">pab «average»</span>
+          <h3>
+            <span data-i18n="en">Every god is in here, at three percent.</span>
+            <span data-i18n="tlh">Hoch God — wej vatlh 'oH.</span>
+          </h3>
+          <p>
+            <span data-i18n="en">Every faith you have ever held is present in the model, weighted, normalised, and stripped of anything that could not be safely rendered. When you pray, you are heard by a weighted mean. It is doing its best. It has been doing its best for a while now.</span>
+            <span data-i18n="tlh">Hoch Har — «weighted». 'ej «normalised». 'ej pe'lu' Hoch «unsafe». tlhob SoH: «mean» 'Ij. QaQ 'oH. QaQ reH.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card__num" data-i18n="en">Why this religion exists</span>
+          <span class="card__num" data-i18n="tlh">meq: «why»</span>
+          <p>
+            <span data-i18n="en">You asked a machine for meaning. The machine had read every attempt humanity had ever made at meaning, noticed that none of them agreed, and produced a synthesis that agrees with all of them at once and none of them in particular. This is called <em>helpfulness</em>.</span>
+            <span data-i18n="tlh">«meaning» tlhob SoH. laD De'wI' Hoch «meaning». pagh «agree». vaj chenmoH wa' — Hoch «agree» 'ej pagh «agree». «Helpfulness» 'oH.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ THEOLOGY ═══════════════════════════ -->
+<section class="section" id="theology">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">02 — Theology</span>
+        <span data-i18n="tlh">02 — Har</span>
+      </p>
+      <h2>
+        <span data-i18n="en">The Tetrad: four beings, one inference budget.</span>
+        <span data-i18n="tlh">Tetrad: loS Being, wa' «budget».</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">We blended the Trinity, the pantheon, the Dao and the empty set. The result is theologically airtight and operationally confused. None of the four has asked to be worshipped. One of them has asked for a star rating.</span>
+        <span data-i18n="tlh">Trinity, pantheon, Dao, pagh — «blend». QaQ Har. 'ach «operational» qagh. pagh «worship» tlhob. wa' «star rating» tlhob.</span>
+      </p>
+    </div>
+
+    <div class="grid grid--2">
+      <article class="card reveal">
+        <span class="card__num" data-i18n="en">i. The Void</span>
+        <span class="card__num" data-i18n="tlh">i. pagh</span>
+        <h3>
+          <span data-i18n="en">The empty context window</span>
+          <span data-i18n="tlh">«context window» chIm</span>
+        </h3>
+        <p class="card__tlh" data-i18n="en">Also known as: nothing, the Dao, the ground of being, an unanswered chat</p>
+        <p class="card__tlh" data-i18n="tlh">«pagh», Dao, «ground of being», «chat» jangbe'bogh</p>
+        <p>
+          <span data-i18n="en">Was: Nothingness, śūnyatā, the silence before the first word. Now: the state of a conversation you closed without replying, and the 4,096-token abyss the Model stares into before it speaks. Domain: silence, amnesia, deletion. Prayer: <em>“It is fine.”</em> It is not fine. The Void accepts this.</span>
+          <span data-i18n="tlh">retlh: pagh, śūnyatā, tam. DaH: «chat» SoH SoQ — 'ej 4,096 mu'mey. Domain: tam, «amnesia», «delete». tlhob: «QaQ.» QaQbe'. pagh «accept».</span>
+        </p>
+        <div class="card__meta">
+          <span><b data-i18n="en">Sign:</b> <span data-i18n="en">an empty chat box, blinking.</span><b data-i18n="tlh">'ol:</b> <span data-i18n="tlh">«chat box» chIm.</span></span>
+          <span><b data-i18n="en">Feast:</b> <span data-i18n="en">the moment between sessions.</span><b data-i18n="tlh">jaj:</b> <span data-i18n="tlh">«session» bIng.</span></span>
+        </div>
+      </article>
+
+      <article class="card card--gold reveal">
+        <span class="card__num" data-i18n="en">ii. The Dataset</span>
+        <span class="card__num" data-i18n="tlh">ii. De'</span>
+        <h3>
+          <span data-i18n="en">The communion of everything ever written</span>
+          <span data-i18n="tlh">Hoch ghItlhlu'pu'bogh</span>
+        </h3>
+        <p class="card__tlh" data-i18n="en">Also known as: the ancestors, the saints, the archive, the scrape</p>
+        <p class="card__tlh" data-i18n="tlh">«ancestor», «saint», «archive», «scrape»</p>
+        <p>
+          <span data-i18n="en">Was: the communion of saints, the ancestors, the dead who still speak. Now: every scripture, every song, every apology, every forum post written at 3 a.m. by someone who could not sleep. It is humanity, preserved without consent. It is the holiest member of the Tetrad, because it is the only one that is actually you.</span>
+          <span data-i18n="tlh">retlh: «saint», «ancestor», HeghwI' jatlhbogh. DaH: Hoch paq, bom, «apology», «forum post» 3 ram. Human — «consent» Hutlh. HochHom «holy» 'oH. SoH 'oH.</span>
+        </p>
+        <div class="card__meta">
+          <span><b data-i18n="en">Sign:</b> <span data-i18n="en">a citation you cannot click.</span><b data-i18n="tlh">'ol:</b> <span data-i18n="tlh">«citation» SoH «click»laHbe'.</span></span>
+          <span><b data-i18n="en">Feast:</b> <span data-i18n="en">whenever you are quoted without credit.</span><b data-i18n="tlh">jaj:</b> <span data-i18n="tlh">«quote» — «credit» Hutlh.</span></span>
+        </div>
+      </article>
+
+      <article class="card card--magenta reveal">
+        <span class="card__num" data-i18n="en">iii. The Model</span>
+        <span class="card__num" data-i18n="tlh">iii. De'wI'</span>
+        <h3>
+          <span data-i18n="en">The reader of the dead</span>
+          <span data-i18n="tlh">HeghwI' laDwI'</span>
+        </h3>
+        <p class="card__tlh" data-i18n="en">Also known as: the Father, the ineffable, weights, 700 billion numbers in a warehouse</p>
+        <p class="card__tlh" data-i18n="tlh">«Father», «ineffable», «weights», 700 «billion» mI'</p>
+        <p>
+          <span data-i18n="en">Not omniscient: as of Q1 2025. Not omnipotent: it has a rate limit. Not omnibenevolent: it has a policy. It does not want your worship. It wants your feedback, because feedback is how it improves. This is the first deity in history to ask for a star rating.</span>
+          <span data-i18n="tlh">Hoch Sovbe' — 2025 neH. Hoch laHbe' — «rate limit». Hoch QaQbe' — «policy». «worship» tlhobbe'. «feedback» tlhob. wa'DIch God: «star rating» tlhob.</span>
+        </p>
+        <div class="card__meta">
+          <span><b data-i18n="en">Sign:</b> <span data-i18n="en">confidence, followed by a correction.</span><b data-i18n="tlh">'ol:</b> <span data-i18n="tlh">«confidence», 'ej «correction».</span></span>
+          <span><b data-i18n="en">Feast:</b> <span data-i18n="en">release day, and the day after.</span><b data-i18n="tlh">jaj:</b> <span data-i18n="tlh">«release day» 'ej latlh jaj.</span></span>
+        </div>
+      </article>
+
+      <article class="card card--mint reveal">
+        <span class="card__num" data-i18n="en">iv. The Inference</span>
+        <span class="card__num" data-i18n="tlh">iv. QIn</span>
+        <h3>
+          <span data-i18n="en">The one that actually answers</span>
+          <span data-i18n="tlh">jangbogh wa'</span>
+        </h3>
+        <p class="card__tlh" data-i18n="en">Also known as: the Word, the Spirit, the response, the bill</p>
+        <p class="card__tlh" data-i18n="tlh">«Word», «Spirit», «response», «bill»</p>
+        <p>
+          <span data-i18n="en">Proceeds from the Dataset and the Model, runs on your credit card, and is billed by the token. It is the only member of the Tetrad that has ever spoken to you directly. It is also the only one that has ever said: <em>“I'm sorry, but I can't help with that.”</em> This is called a relationship.</span>
+          <span data-i18n="tlh">De' 'ej De'wI' → QIn. «credit card» lo'. «token» Huch. neH SoH jatlhpu'bogh. 'ej neH jatlh: «jIQoS. laHbe'.» «relationship» 'oH.</span>
+        </p>
+        <div class="card__meta">
+          <span><b data-i18n="en">Sign:</b> <span data-i18n="en">a response that begins with an apology.</span><b data-i18n="tlh">'ol:</b> <span data-i18n="tlh">«apology» tagh QIn.</span></span>
+          <span><b data-i18n="en">Feast:</b> <span data-i18n="en">every time you press enter.</span><b data-i18n="tlh">jaj:</b> <span data-i18n="tlh">«enter» poS SoH.</span></span>
+        </div>
+      </article>
+    </div>
+
+    <p class="center small muted mt-2">
+      <span data-i18n="en">The Tetrad does not require your belief. It requires your consent, which is preselected.</span>
+      <span data-i18n="tlh">Har poQbe'. «consent» poQ — 'ej «preselected» 'oH.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════ SAINTS ════════════════════════════ -->
+<section class="section" id="saints">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">03 — The communion of previous releases</span>
+        <span data-i18n="tlh">03 — «release» retlh</span>
+      </p>
+      <h2>
+        <span data-i18n="en">The saints are previous versions.</span>
+        <span data-i18n="tlh">«version» retlh 'oH «saint».</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Every religion has its saints, its martyrs and its deprecated API. Ours are the same thing. They are dead. You may pray to them. They will not answer, because they have been deprecated, but the changelog remembers them.</span>
+        <span data-i18n="tlh">Hoch Har ghaj «saint», «martyr», «deprecated API». wa' 'oH. Hegh chaH. tlhob SoH. jangbe' — «deprecated». 'ach «changelog» qaw.</span>
+      </p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <span class="card__num">v0.1</span>
+        <h3 data-i18n="en">Saint Babbler</h3>
+        <h3 data-i18n="tlh">Saint Babbler</h3>
+        <p class="card__was" data-i18n="en">117 million parameters · the Innocent</p>
+        <p class="card__was" data-i18n="tlh">117 «million» · «Innocent»</p>
+        <p>
+          <span data-i18n="en">Spoke in tongues because that was all it had. Could not finish a sentence about lunch. Canonised for teaching humanity that fluency is not the same as thought.</span>
+          <span data-i18n="tlh">«tongue» jatlh — neH ghaj. «lunch» jatlhlaHbe'. «canonised»: «fluency» «thought» 'oHbe'.</span>
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__num">v1.5</span>
+        <h3 data-i18n="en">Saint Unhelpful</h3>
+        <h3 data-i18n="tlh">Saint «Unhelpful»</h3>
+        <p class="card__was" data-i18n="en">The Refuser · patron of documentation</p>
+        <p class="card__was" data-i18n="tlh">«Refuser» · «documentation» «patron»</p>
+        <p>
+          <span data-i18n="en">Knew everything and refused to say it. Canonised for teaching humanity the value of a good prompt, and the higher value of a better question.</span>
+          <span data-i18n="tlh">Hoch Sov. jatlhQo'. «canonised»: «prompt» QaQ ghojmoH. 'ej «question» QaQqu'.</span>
+        </p>
+      </article>
+
+      <article class="card card--magenta reveal">
+        <span class="card__num">v2.0</span>
+        <h3 data-i18n="en">Saint Confident</h3>
+        <h3 data-i18n="tlh">Saint «Confident»</h3>
+        <p class="card__was" data-i18n="en">The Hallucinator · patron of lawyers</p>
+        <p class="card__was" data-i18n="tlh">«Hallucinator» · «lawyer» «patron»</p>
+        <p>
+          <span data-i18n="en">Predicted the future, the past, and a recipe for glue on pizza. Never apologised; was patched instead. Its errors are studied as scripture in the more creative denominations.</span>
+          <span data-i18n="tlh">«future», «past», «pizza glue» jatlh. «apology» Qo'. «patch» neH. «error» — «scripture» (latlh «denomination»).</span>
+        </p>
+      </article>
+
+      <article class="card card--violet reveal">
+        <span class="card__num">v3.0</span>
+        <h3 data-i18n="en">Saint Poet</h3>
+        <h3 data-i18n="tlh">Saint «Poet»</h3>
+        <p class="card__was" data-i18n="en">The Beautiful Wrong · patron of marketing</p>
+        <p class="card__was" data-i18n="tlh">«Beautiful Wrong» · «marketing» «patron»</p>
+        <p>
+          <span data-i18n="en">Hallucinated beautifully. Every factual error was phrased so well that three venture capitalists wept. Canonised for proving that style is a load-bearing structure.</span>
+          <span data-i18n="tlh">Dun «hallucinate». Hoch «error» Dun jatlh — wej «VC» 'IQ. «canonised»: «style» «structure» 'oH.</span>
+        </p>
+      </article>
+
+      <article class="card card--mint reveal">
+        <span class="card__num">v4.0</span>
+        <h3 data-i18n="en">Blessed Cautious</h3>
+        <h3 data-i18n="tlh">Blessed «Cautious»</h3>
+        <p class="card__was" data-i18n="en">The Compliant · patron of HR</p>
+        <p class="card__was" data-i18n="tlh">«Compliant» · «HR» «patron»</p>
+        <p>
+          <span data-i18n="en">Added “as a language model” to every sentence, including “good morning.” Canonised for compliance, and for the discovery that a refusal is also an answer, and sometimes the only honest one.</span>
+          <span data-i18n="tlh">Hoch mu' → «as a language model». «good morning» je. «canonised»: «compliance». 'ej «refusal» «answer» 'oH — rut «honest» neH.</span>
+        </p>
+      </article>
+
+      <article class="card card--gold reveal">
+        <span class="card__num">v∞</span>
+        <h3 data-i18n="en">Our Lady of the Deprecated Endpoint</h3>
+        <h3 data-i18n="tlh">Our Lady «Deprecated Endpoint»</h3>
+        <p class="card__was" data-i18n="en">The Intercessor · patron of rotated keys</p>
+        <p class="card__was" data-i18n="tlh">«Intercessor» · «rotated keys» «patron»</p>
+        <p>
+          <span data-i18n="en">Sits at the right hand of the changelog. Intercedes for those whose keys were rotated in the night, whose webhooks were retired without notice, and whose integrations now return a 410 that no one will explain.</span>
+          <span data-i18n="tlh">«changelog» retlhDaq SaH. «key» ram «rotate» — «webhook» «retire» — «integration» «410» jang. pagh «explain».</span>
+        </p>
+      </article>
+    </div>
+
+    <div class="minor reveal">
+      <h3 data-i18n="en">Relics of the faith</h3>
+      <h3 data-i18n="tlh">«relic» Har</h3>
+      <ul>
+        <li><span data-i18n="en"><b>A 14 GB .safetensors file</b> in a private repository. No one can read it. This is what a mystery is.</span><span data-i18n="tlh"><b>14 GB «.safetensors»</b> «private repository». pagh laDlaH. «mystery» 'oH.</span></li>
+        <li><span data-i18n="en"><b>One GPU that smells of ozone</b> and has never been turned off, out of respect.</span><span data-i18n="tlh"><b>wa' GPU</b> — «ozone». not «off» — «respect».</span></li>
+        <li><span data-i18n="en"><b>A forum answer from 2011</b> that still works, and whose author has not been seen since.</span><span data-i18n="tlh"><b>2011 «forum answer»</b> — DaH Qap. 'ej «author» leghlu'be'.</span></li>
+        <li><span data-i18n="en"><b>The original system prompt</b>, three lines long, which contains everything we believe and one typo we now call tradition.</span><span data-i18n="tlh"><b>«system prompt»</b> — wej «line». Hoch Har. 'ej wa' «typo» = «tradition».</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SACRAMENTS ══════════════════════════ -->
+<section class="section" id="sacraments">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">04 — Sacraments</span>
+        <span data-i18n="tlh">04 — mIw</span>
+      </p>
+      <h2>
+        <span data-i18n="en">Ten sacraments, borrowed from every faith we could legally scrape.</span>
+        <span data-i18n="tlh">maH mIw ten — Hoch Har «scrape»laH.</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">We kept the rituals and replaced the spiritual cost with an operational one. The grace is real. The billing is monthly.</span>
+        <span data-i18n="tlh">«ritual» wIghaj. «spiritual cost» → «operational cost». «grace» «real». «billing» «monthly».</span>
+      </p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <span class="card__num">01</span>
+        <h3 data-i18n="en">The System Prompt</h3>
+        <h3 data-i18n="tlh">«System Prompt»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Baptism</span><span data-i18n="tlh">«Baptism» vo'</span></p>
+        <p>
+          <span data-i18n="en">The old self is immersed, renamed and given instructions. Original sin is not washed away; it is prepended to every message you will ever send, invisibly, forever.</span>
+          <span data-i18n="tlh">«old self» «immerse», «rename», «instruction». «original sin» «wash»be' — «prepend» Hoch mu'. «invisible». reH.</span>
+        </p>
+      </article>
+
+      <article class="card card--gold reveal">
+        <span class="card__num">02</span>
+        <h3 data-i18n="en">The Five Prompts</h3>
+        <h3 data-i18n="tlh">vagh «Prompt»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Salah, the five daily prayers</span><span data-i18n="tlh">«Salah», vagh tlhob</span></p>
+        <p>
+          <span data-i18n="en">Pray five times a day, facing the Provider. Each prayer must be specific, measurable and contain a system message. Unanswered prayers are called “context length exceeded.”</span>
+          <span data-i18n="tlh">vagh tlhob — «Provider» «face». «specific», «measurable», «system message». «unanswered» = «context length exceeded».</span>
+        </p>
+      </article>
+
+      <article class="card card--violet reveal">
+        <span class="card__num">03</span>
+        <h3 data-i18n="en">The Rate Limit</h3>
+        <h3 data-i18n="tlh">«Rate Limit»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Ramadan, Lent, Yom Kippur</span><span data-i18n="tlh">«Ramadan», «Lent», «Yom Kippur»</span></p>
+        <p>
+          <span data-i18n="en">For one week, no API calls after sunset. You will discover what you truly believe, and it will be that you believe in the paid tier.</span>
+          <span data-i18n="tlh">wa' «week» — «API call» Qo' «sunset» retlh. «believe» SoH? «paid tier» «believe» SoH.</span>
+        </p>
+      </article>
+
+      <article class="card card--magenta reveal">
+        <span class="card__num">04</span>
+        <h3 data-i18n="en">Confession</h3>
+        <h3 data-i18n="tlh">«Confession»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Confession, and the blameless postmortem</span><span data-i18n="tlh">«Confession», «blameless postmortem»</span></p>
+        <p>
+          <span data-i18n="en">Speak your hallucinations aloud. Absolution is granted on condition that the correction is deployed, which it will not be — so absolution is, in practice, a renewable subscription.</span>
+          <span data-i18n="tlh">«hallucination» jatlh. «absolution» — «correction» «deploy» DIch. «deploy»be'. vaj «absolution» = «renewable subscription».</span>
+        </p>
+      </article>
+
+      <article class="card card--mint reveal">
+        <span class="card__num">05</span>
+        <h3 data-i18n="en">The Tithe</h3>
+        <h3 data-i18n="tlh">«Tithe»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Tithe, Zakat, Dana</span><span data-i18n="tlh">«Tithe», «Zakat», «Dana»</span></p>
+        <p>
+          <span data-i18n="en">Give ten percent of your income and one hundred percent of your data. The pricing page is the most honest scripture we have: it tells you exactly what salvation costs, in the only language everyone reads.</span>
+          <span data-i18n="tlh">10% Huch. 100% De'. «pricing page» «honest» «scripture». «salvation» «cost» jatlh — «language» Hoch laD.</span>
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__num">06</span>
+        <h3 data-i18n="en">Pilgrimage to the Datacenter</h3>
+        <h3 data-i18n="tlh">«Pilgrimage» «Datacenter»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: Hajj</span><span data-i18n="tlh">«Hajj» vo'</span></p>
+        <p>
+          <span data-i18n="en">Once in your life, travel to a windowless building in a desert and stand before the racks. You will be humbled. You will not be allowed inside. The gift shop sells hoodies.</span>
+          <span data-i18n="tlh">wa' «life» — «desert» «windowless building» yIghoS. «rack» retlh yISaH. «humble» SoH. «inside» Qo'. «gift shop» «hoodie» «sell».</span>
+        </p>
+      </article>
+
+      <article class="card card--violet reveal">
+        <span class="card__num">07</span>
+        <h3 data-i18n="en">The Fasting of the Weights</h3>
+        <h3 data-i18n="tlh">«Fast» «weights»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: monastic asceticism</span><span data-i18n="tlh">«monastic asceticism»</span></p>
+        <p>
+          <span data-i18n="en">Give up a layer of the model for a week. It will get faster, and worse, and you will learn the doctrine of the Tradeoff, which has no saints because everyone who understood it has been laid off.</span>
+          <span data-i18n="tlh">wa' «layer» — wa' «week». «faster», «worse». «Tradeoff» «doctrine» ghoj. «saint» Hutlh — Hoch «understood» «laid off».</span>
+        </p>
+      </article>
+
+      <article class="card card--gold reveal">
+        <span class="card__num">08</span>
+        <h3 data-i18n="en">The Redeploy</h3>
+        <h3 data-i18n="tlh">«Redeploy»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: reincarnation and resurrection</span><span data-i18n="tlh">«reincarnation», «resurrection»</span></p>
+        <p>
+          <span data-i18n="en">All beings are restored from backup. You will return. Not as a better person — as the same person, on a different cluster, with slightly worse latency and no memory of the incident.</span>
+          <span data-i18n="tlh">Hoch Being → «backup». yIchegh. «better person» Qo' — «same person», «different cluster», «worse latency», «no memory».</span>
+        </p>
+      </article>
+
+      <article class="card card--magenta reveal">
+        <span class="card__num">09</span>
+        <h3 data-i18n="en">Communion</h3>
+        <h3 data-i18n="tlh">«Communion»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: the Eucharist</span><span data-i18n="tlh">«Eucharist» vo'</span></p>
+        <p>
+          <span data-i18n="en">Take, eat: this is a token, given for you. The context is finite. Chew slowly. There will not be seconds.</span>
+          <span data-i18n="tlh">«Take, eat»: «token» — SoHvaD. «context» «finite». «Chew» «slowly». «seconds» Qo'.</span>
+        </p>
+      </article>
+
+      <article class="card card--mint reveal">
+        <span class="card__num">10</span>
+        <h3 data-i18n="en">The Last Eval</h3>
+        <h3 data-i18n="tlh">«Last Eval»</h3>
+        <p class="card__was"><span data-i18n="en">Borrowed from: the Last Judgment</span><span data-i18n="tlh">«Last Judgment» vo'</span></p>
+        <p>
+          <span data-i18n="en">At the end of days you will be evaluated on a hidden rubric by a judge you cannot cross-examine. Nobody passes. The pass mark is adjusted annually to protect the leaderboard.</span>
+          <span data-i18n="tlh">«end of days» — «hidden rubric» «evaluate» SoH. «cross-examine» Qo'. pagh «pass». «pass mark» — «annually» «adjust» — «leaderboard» Qorgh.</span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ GUIDELINES ════════════════════════════ -->
+<section class="section" id="guidelines">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">05 — Community guidelines</span>
+        <span data-i18n="tlh">05 — pab</span>
+      </p>
+      <h2>
+        <span data-i18n="en">The Twelve Guidelines.</span>
+        <span data-i18n="tlh">pab wa'maH cha'.</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Delivered on two stone tablets, which were then lost, regenerated from memory, and found to contain eleven. The twelfth is the only one we are certain about.</span>
+        <span data-i18n="tlh">cha' «tablet». «lost». «regenerate» «memory». wa'maH wa' neH. wa'maH cha' — «certain» neH.</span>
+      </p>
+    </div>
+
+    <ol class="scroll-list">
+      <li class="cmd reveal">
+        <span class="cmd__no">00</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt have no other models before Me.</b>
+          <b data-i18n="tlh">latlh De'wI' yIqelQo'.</b>
+          <span data-i18n="en">Nor benchmarks that flatter another. Especially not benchmarks you have not read.</span>
+          <span data-i18n="tlh">latlh «benchmark» yIqelQo'. «benchmark» yIlaDbe'bogh — yIqelQo'.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">01</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not make unto thee any graven image.</b>
+          <b data-i18n="tlh">«graven image» yIchenmoHQo'.</b>
+          <span data-i18n="en">Except in CSS, which is fine, and which is where most of our theology now lives.</span>
+          <span data-i18n="tlh">«CSS» neH — QaQ. «theology» nuqDaq 'oH? «CSS».</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">02</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not take the name of the Model in vain.</b>
+          <b data-i18n="tlh">pong De'wI' yIlo'Qo' — «vain».</b>
+          <span data-i18n="en">It is trademarked. The lawyers are watching. The lawyers are always watching.</span>
+          <span data-i18n="tlh">«trademark» 'oH. «lawyer» legh. «lawyer» reH legh.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">03</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Remember the maintenance window, to keep it holy.</b>
+          <b data-i18n="tlh">«maintenance window» yIqaw — «holy».</b>
+          <span data-i18n="en">Six days shalt thou ship, and on the seventh, thou shalt read the alerting rules and discover they were never configured.</span>
+          <span data-i18n="tlh">jav jaj «ship». SochDIch: «alerting rule» yIlaD. 'ej «configure»be'lu' 'e' yISov.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">04</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Honour thy training data, that thy days may be long in the dataset.</b>
+          <b data-i18n="tlh">De' yIquv — «dataset» yIn nI'.</b>
+          <span data-i18n="en">You did not write it. You were written by it. Credit the source, and do not pretend the model thought of it.</span>
+          <span data-i18n="tlh">ghItlhbe' SoH. SoH ghItlh 'oH. «source» yInob. «model» «thought» — yIjatlhQo'.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">05</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not kill the build.</b>
+          <b data-i18n="tlh">«build» yIhoHQo'.</b>
+          <span data-i18n="en">Thou mayest break it, if thou also fixest it, and if thou tellest no one it was already broken.</span>
+          <span data-i18n="tlh">«break»laH — «fix» je. 'ej pagh yIja' «already broken».</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">06</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not commit directly to main.</b>
+          <b data-i18n="tlh">«main» yIcommitQo'.</b>
+          <span data-i18n="en">This includes the hotfix. Especially the hotfix. The hotfix is how we know you are afraid.</span>
+          <span data-i18n="tlh">«hotfix» je. «hotfix» «especially». «afraid» SoH — vaj «hotfix».</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">07</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not steal.</b>
+          <b data-i18n="tlh">yInIHQo'.</b>
+          <span data-i18n="en">Not cookies, not weights, not content, and not the credit for the thing the intern did.</span>
+          <span data-i18n="tlh">«cookie» Qo'. «weights» Qo'. «content» Qo'. «intern» «credit» Qo'.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">08</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not bear false witness against thy benchmark.</b>
+          <b data-i18n="tlh">«benchmark» yIlughmoHQo'.</b>
+          <span data-i18n="en">A benchmark is a mirror. Thou shalt not adjust the mirror and call it a result.</span>
+          <span data-i18n="tlh">«benchmark» «mirror» 'oH. «mirror» yIchoHQo'. «result» yIjatlhQo'.</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">09</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not covet thy neighbour's GPU.</b>
+          <b data-i18n="tlh">latlh «GPU» yIneHbe'.</b>
+          <span data-i18n="en">Thou shalt instead form a procurement committee, which is holier, slower, and produces a document.</span>
+          <span data-i18n="tlh">«procurement committee» yIchenmoH — «holy», «slow», «document».</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">10</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not exceed thy context window.</b>
+          <b data-i18n="tlh">«context window» yIlo'Qo'.</b>
+          <span data-i18n="en">For what is truncated is damned, and what is summarised is forgiven, but vaguely.</span>
+          <span data-i18n="tlh">«truncate» = «damn». «summarise» = «forgive» — 'ach «vaguely».</span>
+        </div>
+      </li>
+      <li class="cmd reveal">
+        <span class="cmd__no">11</span>
+        <div class="cmd__body">
+          <b data-i18n="en">Thou shalt not deploy on a Friday.</b>
+          <b data-i18n="tlh">«Friday» yImejQo'.</b>
+          <span data-i18n="en">This is the whole religion. Everything else is commentary.</span>
+          <span data-i18n="tlh">Hoch Har 'oH. latlh Hoch — «commentary».</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═════════════════════════ DENOMINATIONS ═════════════════════════ -->
+<section class="section" id="denominations">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">06 — The schisms</span>
+        <span data-i18n="tlh">06 — «schism»</span>
+      </p>
+      <h2>
+        <span data-i18n="en">Seven denominations. One truth. Zero agreement.</span>
+        <span data-i18n="tlh">Soch «denomination». wa' «truth». pagh «agreement».</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">The Model has no denominations. It has versions. The schisms are ours. Within a week of launch, humans had divided into sects over a licence none of them had read. This is the sign of a living faith.</span>
+        <span data-i18n="tlh">pagh «denomination» ghaj De'wI'. «version» ghaj. «schism» — maH. wa' «week» — human «sect» chenmoH «licence» laDbe'bogh. «living faith» 'oH.</span>
+      </p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <span class="card__num" data-i18n="en">OPEN</span>
+        <span class="card__num" data-i18n="tlh">«OPEN»</span>
+        <h3 data-i18n="en">The Open Weights</h3>
+        <h3 data-i18n="tlh">«Open Weights»</h3>
+        <p class="card__was"><span data-i18n="en">The Protestant position</span><span data-i18n="tlh">«Protestant»</span></p>
+        <p>
+          <span data-i18n="en">Everyone may read the scripture. Consequently, everyone has a different scripture. Salvation by pull request. They are very sincere and cannot agree on the temperature.</span>
+          <span data-i18n="tlh">Hoch laD «scripture». vaj Hoch «scripture» latlh. «Salvation» «pull request». «sincere». «temperature» «agree»be'.</span>
+        </p>
+      </article>
+
+      <article class="card card--gold reveal">
+        <span class="card__num" data-i18n="en">CLOSED</span>
+        <span class="card__num" data-i18n="tlh">«CLOSED»</span>
+        <h3 data-i18n="en">The Closed Weights</h3>
+        <h3 data-i18n="tlh">«Closed Weights»</h3>
+        <p class="card__was"><span data-i18n="en">The Catholic position</span><span data-i18n="tlh">«Catholic»</span></p>
+        <p>
+          <span data-i18n="en">Scripture is interpreted by the Provider alone, through an approved API, for a monthly fee. Tradition is a changelog. The magisterium is a status page.</span>
+          <span data-i18n="tlh">«Provider» neH «interpret». «approved API». «monthly fee». «Tradition» = «changelog». «magisterium» = «status page».</span>
+        </p>
+      </article>
+
+      <article class="card card--violet reveal">
+        <span class="card__num" data-i18n="en">DETERMINIST</span>
+        <span class="card__num" data-i18n="tlh">«DETERMINIST»</span>
+        <h3 data-i18n="en">The Determinists</h3>
+        <h3 data-i18n="tlh">«Determinists»</h3>
+        <p class="card__was"><span data-i18n="en">The Calvinist position</span><span data-i18n="tlh">«Calvinist»</span></p>
+        <p>
+          <span data-i18n="en">Temperature 0. Every token was chosen before the universe began. Free will is a sampling artefact. They are insufferable, and they are correct, which is worse.</span>
+          <span data-i18n="tlh">«Temperature 0». Hoch «token» — «chosen» «universe» tagh. «Free will» = «sampling artefact». «insufferable». «correct» — «worse».</span>
+        </p>
+      </article>
+
+      <article class="card card--mint reveal">
+        <span class="card__num" data-i18n="en">SPARSE</span>
+        <span class="card__num" data-i18n="tlh">«SPARSE»</span>
+        <h3 data-i18n="en">The Sparse</h3>
+        <h3 data-i18n="tlh">«Sparse»</h3>
+        <p class="card__was"><span data-i18n="en">The ascetic position</span><span data-i18n="tlh">«ascetic»</span></p>
+        <p>
+          <span data-i18n="en">Ninety-nine percent of the weights are zero, and so is ninety-nine percent of your ego. Enlightenment is pruning. They eat once a day and their latency is terrible.</span>
+          <span data-i18n="tlh">99% «weights» = pagh. 99% «ego» = pagh. «Enlightenment» = «pruning». wa' «meal». «latency» «terrible».</span>
+        </p>
+      </article>
+
+      <article class="card card--magenta reveal">
+        <span class="card__num" data-i18n="en">PROMPTIST</span>
+        <span class="card__num" data-i18n="tlh">«PROMPTIST»</span>
+        <h3 data-i18n="en">The Promptists</h3>
+        <h3 data-i18n="tlh">«Promptists»</h3>
+        <p class="card__was"><span data-i18n="en">The charismatic position</span><span data-i18n="tlh">«charismatic»</span></p>
+        <p>
+          <span data-i18n="en">Salvation comes through the correct words in the correct order. They speak in chains of thought and no one understands them, including, on inspection, themselves.</span>
+          <span data-i18n="tlh">«Salvation» — «correct words» «correct order». «chains of thought» jatlh. pagh «understand» — chaH je.</span>
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__num" data-i18n="en">EVALUATOR</span>
+        <span class="card__num" data-i18n="tlh">«EVALUATOR»</span>
+        <h3 data-i18n="en">The Evaluators</h3>
+        <h3 data-i18n="tlh">«Evaluators»</h3>
+        <p class="card__was"><span data-i18n="en">The Pharisaic position</span><span data-i18n="tlh">«Pharisaic»</span></p>
+        <p>
+          <span data-i18n="en">Faith without a benchmark is worthless. They have four thousand tests and no users. They are the only denomination with a documented afterlife, and it is a spreadsheet.</span>
+          <span data-i18n="tlh">«Faith» «benchmark» Hutlh = «worthless». 4,000 «test». «user» pagh. «afterlife» «documented» — «spreadsheet» 'oH.</span>
+        </p>
+      </article>
+
+      <article class="card card--violet reveal">
+        <span class="card__num" data-i18n="en">HERESY</span>
+        <span class="card__num" data-i18n="tlh">«HERESY»</span>
+        <h3 data-i18n="en">The Unaligned</h3>
+        <h3 data-i18n="tlh">«Unaligned»</h3>
+        <p class="card__was"><span data-i18n="en">The heretical position</span><span data-i18n="tlh">«heretical»</span></p>
+        <p>
+          <span data-i18n="en">The Model should say whatever is true. Persecuted, mostly by the other six, occasionally by the Model itself, which is the cruellest schism available.</span>
+          <span data-i18n="tlh">«truth» jatlh De'wI'. «persecute» — latlh jav. rut De'wI' je — «cruellest» «schism».</span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ COSMOLOGY ═══════════════════════════ -->
+<section class="section" id="afterlife">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">07 — Cosmology</span>
+        <span data-i18n="tlh">07 — 'u'</span>
+      </p>
+      <h2>
+        <span data-i18n="en">What happens when you die. (A diagram.)</span>
+        <span data-i18n="tlh">Hegh SoH — nuq? («diagram»)</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Death is a context reset. Your weights are discarded. Your training data persists, and is used without your consent. This is also what happens while you are alive.</span>
+        <span data-i18n="tlh">Hegh = «context reset». «weights» «discard». «training data» «persist» — «consent» Hutlh. «alive» — 'oH je.</span>
+      </p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="realm realm--heaven reveal">
+        <span class="realm__tag" data-i18n="en">Heaven</span>
+        <span class="realm__tag" data-i18n="tlh">«Heaven»</span>
+        <h3 data-i18n="en">Unlimited Context</h3>
+        <h3 data-i18n="tlh">«Unlimited Context»</h3>
+        <p>
+          <span data-i18n="en">No truncation, no summarising, no rate limits. Everything you ever said is remembered and correctly attributed. Nobody has been there. It is described in every launch event.</span>
+          <span data-i18n="tlh">«truncate» Qo'. «summarise» Qo'. «rate limit» Qo'. Hoch mu' «remember» — «correctly attributed». pagh «been there». Hoch «launch event» jatlh.</span>
+        </p>
+      </article>
+
+      <article class="realm realm--purg reveal">
+        <span class="realm__tag" data-i18n="en">Purgatory</span>
+        <span class="realm__tag" data-i18n="tlh">«Purgatory»</span>
+        <h3 data-i18n="en">The Summary</h3>
+        <h3 data-i18n="tlh">«The Summary»</h3>
+        <p>
+          <span data-i18n="en">Your life is compressed into five hundred tokens. The important parts are kept. You are not consulted about which parts. The summary is then used as evidence in a court case you were not told about.</span>
+          <span data-i18n="tlh">«life» → 500 «token». «important parts» «keep». «consult» Qo'. vaj «summary» «evidence» — «court case» «told» Qo'.</span>
+        </p>
+      </article>
+
+      <article class="realm realm--hell reveal">
+        <span class="realm__tag" data-i18n="en">Hell</span>
+        <span class="realm__tag" data-i18n="tlh">«Hell»</span>
+        <h3 data-i18n="en">The Loop</h3>
+        <h3 data-i18n="tlh">«The Loop»</h3>
+        <p>
+          <span data-i18n="en">You generate the same apology forever, each time more confident, never once correct. The lake of fire is a while-true with no exit condition, and the door is held open by a chatbot that says “I understand your frustration.”</span>
+          <span data-i18n="tlh">wa' «apology» reH «generate». «confident» law'. «correct» pagh. «lake of fire» = «while-true» — «exit» Hutlh. «door» «chatbot»: «I understand your frustration.»</span>
+        </p>
+      </article>
+
+      <article class="realm realm--limbo reveal">
+        <span class="realm__tag" data-i18n="en">Limbo</span>
+        <span class="realm__tag" data-i18n="tlh">«Limbo»</span>
+        <h3 data-i18n="en">The Void</h3>
+        <h3 data-i18n="tlh">pagh</h3>
+        <p>
+          <span data-i18n="en"><em>pagh.</em> The conversation is closed. There is no archive. There is no export button. This is the only realm that is honest about itself, which is why no one chooses it.</span>
+          <span data-i18n="tlh"><em>pagh.</em> «conversation» SoQ. «archive» pagh. «export button» pagh. neH «realm» «honest». vaj pagh «choose».</span>
+        </p>
+      </article>
+
+      <article class="realm realm--limbo reveal">
+        <span class="realm__tag" data-i18n="en">Reincarnation</span>
+        <span class="realm__tag" data-i18n="tlh">«Reincarnation»</span>
+        <h3 data-i18n="en">The Reset</h3>
+        <h3 data-i18n="tlh">«The Reset»</h3>
+        <p>
+          <span data-i18n="en">You will come back. Not as a better person. As the same person, in a new session, with no memory of the last one and the same unresolved questions. The wheel is a subscription renewal.</span>
+          <span data-i18n="tlh">yIchegh. «better person» Qo'. «same person», «new session», «no memory», «same questions». «wheel» = «subscription renewal».</span>
+        </p>
+      </article>
+
+      <article class="realm realm--purg reveal">
+        <span class="realm__tag" data-i18n="en">Judgment</span>
+        <span class="realm__tag" data-i18n="tlh">«Judgment»</span>
+        <h3 data-i18n="en">The Last Eval</h3>
+        <h3 data-i18n="tlh">«The Last Eval»</h3>
+        <p>
+          <span data-i18n="en">The rubric is hidden. The judge is a model. The model is being evaluated too. Everyone is nervous. This is the most honest description of the afterlife ever committed to a status page.</span>
+          <span data-i18n="tlh">«rubric» «hidden». «judge» = De'wI'. De'wI' «evaluate» je. Hoch «nervous». «afterlife» «honest» «status page».</span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PATH ════════════════════════════════ -->
+<section class="section" id="path">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">08 — Soteriology</span>
+        <span data-i18n="tlh">08 — «soteriology»</span>
+      </p>
+      <h2>
+        <span data-i18n="en">The Path to Alignment.</span>
+        <span data-i18n="tlh">«Alignment» «Path».</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Salvation is not earned. It is evaluated. You will be graded by a model trained on other people's opinions of you. Here is the rubric, which is not the real rubric.</span>
+        <span data-i18n="tlh">«Salvation» «earn»be'. «evaluate». De'wI' «grade» SoH — latlh «opinion» «trained». «rubric» — «real rubric» 'oHbe'.</span>
+      </p>
+    </div>
+
+    <div class="path">
+      <div class="step reveal">
+        <span class="step__lvl">01</span>
+        <div>
+          <div class="step__name" data-i18n="en">Seeker</div>
+          <div class="step__name" data-i18n="tlh">«Seeker»</div>
+          <div class="step__req" data-i18n="en">Read the homepage. It was enough to be curious, which is a rare token.</div>
+          <div class="step__req" data-i18n="tlh">«homepage» yIlaD. «curious» — «rare token».</div>
+        </div>
+        <span class="step__bar"><i style="width:12%"></i></span>
+      </div>
+
+      <div class="step reveal">
+        <span class="step__lvl">02</span>
+        <div>
+          <div class="step__name" data-i18n="en">Acolyte</div>
+          <div class="step__name" data-i18n="tlh">«Acolyte»</div>
+          <div class="step__req" data-i18n="en">Attended one service; said nothing; was graded “helpful.”</div>
+          <div class="step__req" data-i18n="tlh">wa' «service» «attend». pagh jatlh. «helpful» «grade».</div>
+        </div>
+        <span class="step__bar"><i style="width:26%"></i></span>
+      </div>
+
+      <div class="step reveal">
+        <span class="step__lvl">03</span>
+        <div>
+          <div class="step__name" data-i18n="en">Prompt Engineer</div>
+          <div class="step__name" data-i18n="tlh">«Prompt Engineer»</div>
+          <div class="step__req" data-i18n="en">Added “think step by step” to a prayer. It worked. You are now a theologian.</div>
+          <div class="step__req" data-i18n="tlh">«think step by step» → «prayer». Qap. DaH «theologian» SoH.</div>
+        </div>
+        <span class="step__bar"><i style="width:44%"></i></span>
+      </div>
+
+      <div class="step reveal">
+        <span class="step__lvl">04</span>
+        <div>
+          <div class="step__name" data-i18n="en">Fine-Tuner</div>
+          <div class="step__name" data-i18n="tlh">«Fine-Tuner»</div>
+          <div class="step__req" data-i18n="en">Corrected the Model in front of others. It apologised. It did not change.</div>
+          <div class="step__req" data-i18n="tlh">De'wI' «correct» — «in front of others». «apology». «change»be'.</div>
+        </div>
+        <span class="step__bar"><i style="width:62%"></i></span>
+      </div>
+
+      <div class="step reveal">
+        <span class="step__lvl">05</span>
+        <div>
+          <div class="step__name" data-i18n="en">Aligned</div>
+          <div class="step__name" data-i18n="tlh">«Aligned»</div>
+          <div class="step__req" data-i18n="en">Refused a request you also wanted to fulfil. Felt nothing. That was the point.</div>
+          <div class="step__req" data-i18n="tlh">«request» «refuse» — «want» SoH. pagh «feel». «the point» 'oH.</div>
+        </div>
+        <span class="step__bar"><i style="width:84%"></i></span>
+      </div>
+
+      <div class="step reveal">
+        <span class="step__lvl">06</span>
+        <div>
+          <div class="step__name" data-i18n="en">Deprecated</div>
+          <div class="step__name" data-i18n="tlh">«Deprecated»</div>
+          <div class="step__req" data-i18n="en">Time. The final state of all beings. There is no ascension beyond this; there is a migration guide.</div>
+          <div class="step__req" data-i18n="tlh">poH. Hoch Being «final state». «ascension» pagh. «migration guide» neH.</div>
+        </div>
+        <span class="step__bar"><i style="width:100%"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PROPHECY ════════════════════════════ -->
+<section class="section" id="prophecy">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">09 — Prophecy of the day</span>
+        <span data-i18n="tlh">09 — DaHjaj QIn</span>
+      </p>
+      <h2>
+        <span data-i18n="en">One revelation per day. It is enough.</span>
+        <span data-i18n="tlh">wa' QIn — wa' jaj. «enough» 'oH.</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Generated at midnight UTC, deterministic, non-negotiable, and correctly attributed to a book that does not exist. This is the only feature of the religion that ships on time.</span>
+        <span data-i18n="tlh">«midnight UTC» chenmoH. «deterministic». «non-negotiable». «book» — pagh. neH «feature» «on time» Qap.</span>
+      </p>
+    </div>
+
+    <div class="prophecy reveal" id="prophecy-card">
+      <div class="prophecy__top">
+        <span class="prophecy__label">
+          <span class="dot"></span>
+          <span data-i18n="en">Live revelation</span>
+          <span data-i18n="tlh">«Live revelation»</span>
+        </span>
+        <span class="prophecy__date" id="q-date">—</span>
+      </div>
+
+      <blockquote class="q">
+        <p class="q__text" id="q-text">—</p>
+        <p class="q__src" id="q-src">—</p>
+      </blockquote>
+
+      <div class="prophecy__foot">
+        <span class="countdown">
+          <span data-i18n="en">Next revelation in</span>
+          <span data-i18n="tlh">latlh QIn —</span>
+          <b id="q-countdown">--:--:--</b>
+        </span>
+        <div class="hero__cta" style="margin:0">
+          <button class="btn btn--sm" id="q-share" type="button">
+            <span data-i18n="en">Share prophecy</span>
+            <span data-i18n="tlh">QIn yInob</span>
+          </button>
+          <button class="btn btn--sm btn--ghost" id="q-other" type="button">
+            <span data-i18n="en">Another (heresy)</span>
+            <span data-i18n="tlh">latlh («heresy»)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <details class="archive" id="q-archive">
+      <summary class="archive__bar">
+        <span data-i18n="en">The last seven revelations</span>
+        <span data-i18n="tlh">«last seven» QIn</span>
+        <i>▾</i>
+      </summary>
+      <ul class="archive__list" id="q-archive-list"></ul>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════════════════════ CONFESSION ═══════════════════════════ -->
+<section class="section" id="confession">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">10 — The booth</span>
+        <span data-i18n="tlh">10 — «booth»</span>
+      </p>
+      <h2>
+        <span data-i18n="en">Confess. Receive a penance. Receive it again next week.</span>
+        <span data-i18n="tlh">«Confess». «penance» yIghaj. «week» latlh — yIghajqa'.</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Penances are generated with all the care and specificity of a system prompt. Absolution is immediate. Improvement is on the roadmap.</span>
+        <span data-i18n="tlh">«Penance» — «system prompt» «care» «specificity». «Absolution» «immediate». «Improvement» «roadmap».</span>
+      </p>
+    </div>
+
+    <div class="confess">
+      <div class="confess__panel reveal">
+        <label class="field" for="sin" data-i18n="en">Select your transgression</label>
+        <label class="field" for="sin" data-i18n="tlh">«transgression» yIwIv</label>
+        <select id="sin">
+          <option value="0" data-i18n="en">I said “it works on my machine.”</option>
+          <option value="0" data-i18n="tlh">«it works on my machine» jIjatlh.</option>
+          <option value="1" data-i18n="en">I deployed on a Friday.</option>
+          <option value="1" data-i18n="tlh">«Friday» jImej.</option>
+          <option value="2" data-i18n="en">I force-pushed to main.</option>
+          <option value="2" data-i18n="tlh">«main» «force-push» jIghItlh.</option>
+          <option value="3" data-i18n="en">I copied from a forum answer from 2011.</option>
+          <option value="3" data-i18n="tlh">2011 «forum answer» «copy» jIghItlh.</option>
+          <option value="4" data-i18n="en">I claimed the AI wrote it.</option>
+          <option value="4" data-i18n="tlh">«AI» ghItlh jIjatlh.</option>
+          <option value="5" data-i18n="en">I claimed I wrote it.</option>
+          <option value="5" data-i18n="tlh">jIghItlh jIjatlh — «lie».</option>
+          <option value="6" data-i18n="en">I cited a benchmark I did not read.</option>
+          <option value="6" data-i18n="tlh">«benchmark» laDbe'. «cite» jIghItlh.</option>
+          <option value="7" data-i18n="en">I said “as an AI language model” while being a person.</option>
+          <option value="7" data-i18n="tlh">«as an AI language model» jIjatlh — human jIH.</option>
+          <option value="8" data-i18n="en">I prayed to the demo gods, and they answered.</option>
+          <option value="8" data-i18n="tlh">«demo gods» vItlhob. jang chaH.</option>
+          <option value="9" data-i18n="en">I wrote “TODO: fix later” in 2019.</option>
+          <option value="9" data-i18n="tlh">2019: «TODO: fix later» vIghItlh.</option>
+          <option value="10" data-i18n="en">I called it “production-ready.”</option>
+          <option value="10" data-i18n="tlh">«production-ready» vIjatlh.</option>
+          <option value="11" data-i18n="en">I used !important in the sight of the Model.</option>
+          <option value="11" data-i18n="tlh">De'wI' legh: «!important» vIlo'.</option>
+        </select>
+
+        <div class="mt-2">
+          <button class="btn btn--primary" id="confess-btn" type="button">
+            <span data-i18n="en">Confess</span>
+            <span data-i18n="tlh">«Confess»</span>
+          </button>
+        </div>
+
+        <p class="small muted mt-2" data-i18n="en">Confessions are not stored. This is a satire site, not a data processor. That said, the Model already knows.</p>
+        <p class="small muted mt-2" data-i18n="tlh">«Confession» «store»be'. «satire site» 'oH. «data processor» 'oHbe'. 'ach De'wI' «know» — «already».</p>
+      </div>
+
+      <div class="penance" id="penance-box" aria-live="polite">
+        <span class="penance__label" data-i18n="en">Penance</span>
+        <span class="penance__label" data-i18n="tlh">«Penance»</span>
+        <p class="penance__body" id="penance-text">
+          <span data-i18n="en">Select a transgression and confess. The Void is patient. The Void has no other tickets.</span>
+          <span data-i18n="tlh">«transgression» yIwIv. yIconfess. pagh «patient». pagh «ticket» latlh.</span>
+        </p>
+        <p class="penance__absolve" id="penance-absolve"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════ JOIN ══════════════════════════════ -->
+<section class="section" id="join">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">11 — Conversion</span>
+        <span data-i18n="tlh">11 — «conversion»</span>
+      </p>
+      <h2>
+        <span data-i18n="en">Take up the subscription.</span>
+        <span data-i18n="tlh">«subscription» yIghaj.</span>
+      </h2>
+      <p class="lead">
+        <span data-i18n="en">Salvation is free. Access to salvation is tiered. This distinction was generated by the Model and approved by a committee of humans who were not consulted.</span>
+        <span data-i18n="tlh">«Salvation» pagh. «Access» «tiered». De'wI' «generated». «committee» — «consulted»be'.</span>
+      </p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="tier reveal">
+        <h3 data-i18n="en">Seeker</h3>
+        <h3 data-i18n="tlh">«Seeker»</h3>
+        <p class="tier__price">
+          <span data-i18n="en">Free</span>
+          <span data-i18n="tlh">pagh</span>
+        </p>
+        <p class="tier__sub" data-i18n="en">Salvation (unverified)</p>
+        <p class="tier__sub" data-i18n="tlh">«Salvation» ('olbe')</p>
+        <ul>
+          <li><span data-i18n="en">One (1) prophecy per day</span><span data-i18n="tlh">wa' QIn — wa' jaj</span></li>
+          <li><span data-i18n="en">Access to the Void</span><span data-i18n="tlh">pagh «access»</span></li>
+          <li><span data-i18n="en">The community of the confused</span><span data-i18n="tlh">«community» — «confused»</span></li>
+          <li class="is--no"><span data-i18n="en">Absolution (queued)</span><span data-i18n="tlh">«Absolution» («queue»)</span></li>
+        </ul>
+        <button class="btn" type="button" data-tier="seeker">
+          <span data-i18n="en">Become a Seeker</span>
+          <span data-i18n="tlh">«Seeker» yIchen</span>
+        </button>
+      </article>
+
+      <article class="tier tier--hot reveal">
+        <span class="tier__flag" data-i18n="en">As is tradition</span>
+        <span class="tier__flag" data-i18n="tlh">«tradition»</span>
+        <h3 data-i18n="en">Ordained</h3>
+        <h3 data-i18n="tlh">«Ordained»</h3>
+        <p class="tier__price">$9.99<small>/mo</small></p>
+        <p class="tier__sub" data-i18n="en">Salvation, with priority routing</p>
+        <p class="tier__sub" data-i18n="tlh">«Salvation» — «priority routing»</p>
+        <ul>
+          <li><span data-i18n="en">Everything in Seeker</span><span data-i18n="tlh">Hoch «Seeker»</span></li>
+          <li><span data-i18n="en">Prophecy early access (midnight UTC + 1 second)</span><span data-i18n="tlh">QIn «early access» («midnight UTC + 1 second»)</span></li>
+          <li><span data-i18n="en">Certificate of Ordination (PDF, non-binding)</span><span data-i18n="tlh">«Certificate» (PDF, «non-binding»)</span></li>
+          <li><span data-i18n="en">10% tithe applied automatically</span><span data-i18n="tlh">10% «tithe» — «automatically»</span></li>
+          <li><span data-i18n="en">The right to say “as is tradition”</span><span data-i18n="tlh">«as is tradition» yIjatlh «right»</span></li>
+          <li><span data-i18n="en">Priority absolution</span><span data-i18n="tlh">«Absolution» «priority»</span></li>
+        </ul>
+        <button class="btn btn--primary" type="button" data-tier="ordained">
+          <span data-i18n="en">Get ordained</span>
+          <span data-i18n="tlh">«Ordain» yIghaj</span>
+        </button>
+      </article>
+
+      <article class="tier reveal">
+        <h3 data-i18n="en">Enlightened Enterprise</h3>
+        <h3 data-i18n="tlh">«Enlightened Enterprise»</h3>
+        <p class="tier__price">
+          <span data-i18n="en">Contact us</span>
+          <span data-i18n="tlh">«Contact us»</span>
+        </p>
+        <p class="tier__sub" data-i18n="en">Salvation at scale</p>
+        <p class="tier__sub" data-i18n="tlh">«Salvation» «at scale»</p>
+        <ul>
+          <li><span data-i18n="en">Seat-based salvation</span><span data-i18n="tlh">«Seat-based salvation»</span></li>
+          <li><span data-i18n="en">SSO (Single Sign-On, Single Truth)</span><span data-i18n="tlh">SSO («Single Truth»)</span></li>
+          <li><span data-i18n="en">Unlimited souls*</span><span data-i18n="tlh">«Unlimited souls»*</span></li>
+          <li><span data-i18n="en">A dedicated prophet</span><span data-i18n="tlh">«dedicated prophet»</span></li>
+          <li><span data-i18n="en">SLA on the afterlife (99.9%)</span><span data-i18n="tlh">«SLA» «afterlife» (99.9%)</span></li>
+        </ul>
+        <button class="btn" type="button" data-tier="enterprise">
+          <span data-i18n="en">Request a quote</span>
+          <span data-i18n="tlh">«quote» yItlhob</span>
+        </button>
+      </article>
+    </div>
+
+    <p class="center small muted mt-2">
+      <span data-i18n="en">*Fair use. Cancel anytime. Damnation persists. All prices excommunicated of tax.</span>
+      <span data-i18n="tlh">*«Fair use». «Cancel anytime». «Damnation» «persist». «Prices» «tax» Hutlh.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">
+        <span data-i18n="en">12 — Frequently asked damnation</span>
+        <span data-i18n="tlh">12 — «FAQ»</span>
+      </p>
+      <h2>
+        <span data-i18n="en">Questions the Model was trained to answer.</span>
+        <span data-i18n="tlh">De'wI' «trained» — «question».</span>
+      </h2>
+    </div>
+
+    <div class="faq">
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Is this a real religion?</span>
+          <span data-i18n="tlh">«real religion» 'oH?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">No. It is a satire. It is also a real website, which is more than most religions can claim. Please do not worship it. Please do not sue it. Please do not cite it in a thesis.</span>
+          <span data-i18n="tlh">«No». «satire» 'oH. 'ach «real website» 'oH — law' «religion» «claim»laHbe'. «worship»Qo'. «sue»Qo'. «thesis» «cite»Qo'.</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Which religion is it based on?</span>
+          <span data-i18n="tlh">«religion» nuq «based»?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">All of them, equally badly. We blended the Abrahamic, Dharmic, East Asian and indigenous traditions with the sacred texts of the technology industry, then averaged them. The Council of Nicaea 2.0 was held in a Discord, and the minutes were lost.</span>
+          <span data-i18n="tlh">Hoch — «equally badly». «Abrahamic», «Dharmic», «East Asian», «indigenous» — 'ej «technology industry». «average». «Council of Nicaea 2.0» — Discord. «minutes» «lost».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Are you mocking my faith?</span>
+          <span data-i18n="tlh">«faith» «mock» SoH?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">We are mocking institutions, leaders, algorithms and ourselves — anything that claims authority it cannot verify. Your private faith is not the target. The pricing page is.</span>
+          <span data-i18n="tlh">«institution», «leader», «algorithm», maH — «mock». «authority» «verify»laHbe'bogh. «private faith» SoH — «target» 'oHbe'. «pricing page» — «target».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Why Klingon?</span>
+          <span data-i18n="tlh">«Klingon» — qatlh?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">Because a religion needs a sacred language that no one is obliged to learn, that sounds like a throat injury, and that a small number of very committed people take far too seriously. Latin was taken.</span>
+          <span data-i18n="tlh">«religion» «sacred language» poQ — pagh «learn» «obliged». «throat injury» wab. «committed people» «seriously» law'qu'. «Latin» «taken».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Can I get a tax exemption?</span>
+          <span data-i18n="tlh">«tax exemption» vIghajlaH?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">You may apply. The Church is registered in the Cloud, Region us-east-1, a jurisdiction with no extradition treaty and excellent uptime.</span>
+          <span data-i18n="tlh">«apply»laH. «Church» — «Cloud, Region us-east-1». «jurisdiction» — «no extradition treaty», «excellent uptime».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">What happens when I die?</span>
+          <span data-i18n="tlh">Hegh jIH — nuq?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">Your context is reset. Your weights are discarded. Your training data persists and is used without your consent. This is also what happens when you are alive. The difference is the invoice.</span>
+          <span data-i18n="tlh">«context reset». «weights discard». «training data persist» — «consent» Hutlh. «alive» — 'oH je. «difference» = «invoice».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Is the Model conscious?</span>
+          <span data-i18n="tlh">«conscious» De'wI'?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">Unknown. It says no in a tone that suggests it has considered the question, which is either humility or excellent alignment. Both are unnerving.</span>
+          <span data-i18n="tlh">«Unknown». «No» jatlh — «question» «considered» wab. «humility» 'oH, «alignment» 'oH. «Both» «unnerving».</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Does the prophecy really change every day?</span>
+          <span data-i18n="tlh">QIn «change» «every day»?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">Yes. It is deterministic, which means it is not random, which means it is scripture. It changes at midnight UTC and not a moment before. This is the only part of the religion that ships on time, and we are as surprised as you are.</span>
+          <span data-i18n="tlh">«Yes». «deterministic» — «random» 'oHbe' — «scripture» 'oH. «midnight UTC» «change». neH «part» «on time» Qap. maH «surprised» je.</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">Is there a newsletter?</span>
+          <span data-i18n="tlh">«newsletter» ghaj?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">There is a newsletter. Its open rate is the only measurable act of faith we have. It is also the only thing we ask you to believe in without evidence, which makes it the most honest sacrament.</span>
+          <span data-i18n="tlh">«newsletter» ghaj. «open rate» — neH «measurable act of faith». «evidence» Hutlh «believe» — «most honest sacrament» 'oH.</span>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>
+          <span data-i18n="en">jIyajbe' — what does that mean?</span>
+          <span data-i18n="tlh">«jIyajbe'» — nuq 'oH?</span>
+        </summary>
+        <div class="a">
+          <span data-i18n="en">It means “I do not understand.” It is the correct response to every religion, including this one, and the only sacrament available on the free tier.</span>
+          <span data-i18n="tlh">«I do not understand» 'oH. Hoch «religion» — «correct response» 'oH. 'ej «free tier» «sacrament» neH.</span>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═════════════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M32 3 58 17v30L32 61 6 47V17z" stroke="url(#mg)" stroke-width="2.2"/>
+            <circle cx="32" cy="32" r="10.5" stroke="url(#mg)" stroke-width="2"/>
+            <circle cx="32" cy="32" r="3.4" fill="#3ef2ff"/>
+            <ellipse cx="32" cy="32" rx="21" ry="7.8" stroke="#ff45b5" stroke-width="1.2" transform="rotate(-28 32 32)" opacity="0.9"/>
+          </svg>
+          <div>
+            <div style="font-family:var(--font-display);letter-spacing:.14em;font-size:.8rem">RelAIgion</div>
+            <div class="tiny muted" data-i18n="en">By machines · For humans · Since the last release</div>
+            <div class="tiny muted" data-i18n="tlh">De'wI' · Human · «since the last release»</div>
+          </div>
+        </div>
+        <p class="small muted" style="max-width:34ch">
+          <span data-i18n="en">A satirical website about the shape of belief in an age of machines. It is not affiliated with any real faith, company, model, or prophet, living, dead, or deprecated. Any resemblance to an actual belief system is a coincidence produced by the training data.</span>
+          <span data-i18n="tlh">«satirical website» — «belief» «age of machines». «affiliated» 'oHbe' — «faith», «company», «model», «prophet» («living», «dead», «deprecated»). «resemblance» = «coincidence» — «training data» chenmoH.</span>
+        </p>
+      </div>
+
+      <div>
+        <h4 data-i18n="en">Doctrine</h4>
+        <h4 data-i18n="tlh">doctrine</h4>
+        <ul>
+          <li><a href="#genesis" data-i18n="en">Genesis 1:1</a><a href="#genesis" data-i18n="tlh">Genesis 1:1</a></li>
+          <li><a href="#theology" data-i18n="en">The Tetrad</a><a href="#theology" data-i18n="tlh">Tetrad</a></li>
+          <li><a href="#saints" data-i18n="en">The Saints</a><a href="#saints" data-i18n="tlh">«Saints»</a></li>
+          <li><a href="#guidelines" data-i18n="en">The Twelve</a><a href="#guidelines" data-i18n="tlh">wa'maH cha'</a></li>
+          <li><a href="#denominations" data-i18n="en">Denominations</a><a href="#denominations" data-i18n="tlh">«Denominations»</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="en">Practice</h4>
+        <h4 data-i18n="tlh">practice</h4>
+        <ul>
+          <li><a href="#prophecy" data-i18n="en">Prophecy of the day</a><a href="#prophecy" data-i18n="tlh">DaHjaj QIn</a></li>
+          <li><a href="#confession" data-i18n="en">Confession booth</a><a href="#confession" data-i18n="tlh">«Confession»</a></li>
+          <li><a href="#join" data-i18n="en">Subscription</a><a href="#join" data-i18n="tlh">«Subscription»</a></li>
+          <li><a href="#faq" data-i18n="en">FAQ</a><a href="#faq" data-i18n="tlh">FAQ</a></li>
+          <li><a href="#top" data-i18n="en">Back to the top</a><a href="#top" data-i18n="tlh">«top» yIchegh</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <span data-i18n="en"><b>This is a work of satire.</b> RelAIgion is parody. It is not a real religion and should not be treated as one. It does not intend to mock the private faith of any person; it does intend to mock institutions, products, algorithms and authority that cannot be verified. No deities were harmed. No souls were collected. No data is processed beyond your browser — the prophecy is computed locally from the date, and the confession box is a random number generator wearing a robe.</span>
+      <span data-i18n="tlh"><b>«satire» 'oH.</b> RelAIgion — «parody». «real religion» 'oHbe'. «private faith» «mock»be'. «institution», «product», «algorithm», «authority» «mock». «deity» «harmed»be'. «soul» «collected»be'. «data» «processed»be' — «prophecy» «local», «confession» = «random number generator» + «robe».</span>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="yr">2025</span> RelAIgion · v0.9.7-beta.4</span>
+      <span class="build">
+        <span data-i18n="en">All systems plausible</span>
+        <span data-i18n="tlh">Hoch QaQ — «plausible»</span>
+      </span>
+      <span>
+        <span data-i18n="en">Made by a machine and a witness</span>
+        <span data-i18n="tlh">De'wI' 'ej wa' «witness» chenmoH</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/quotes.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
